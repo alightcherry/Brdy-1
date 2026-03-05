@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Papa Shravya ❤️</title>
+
+<style>
+
+body{
+margin:0;
+background:#000;
+color:white;
+font-family: 'Poppins', sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* Start screen */
+
+#start{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:30px;
+padding:20px 40px;
+background:#ff0055;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 0 20px pink;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:translate(-50%,-50%) scale(1);}
+50%{transform:translate(-50%,-50%) scale(1.1);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
+
+/* Content */
+
+#content{
+display:none;
+height:100vh;
+overflow-y:auto;
+padding:40px;
+scroll-behavior:smooth;
+}
+
+/* Heart rain */
+
+.heart{
+position:fixed;
+top:-10px;
+color:red;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+/* Images */
+
+img{
+width:85%;
+border-radius:20px;
+margin:30px 0;
+animation:zoom 6s infinite alternate;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+/* Text */
+
+h1{
+color:pink;
+font-size:35px;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+margin:30px 0;
+}
+
+/* Buttons */
+
+button{
+padding:15px 35px;
+font-size:20px;
+margin:10px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+}
+
+.yes{
+background:#00c853;
+color:white;
+}
+
+.no{
+background:#ff1744;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="start" onclick="start()">Tap This ❤️</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8b9c2c0ff.mp3">
+</audio>
+
+<div id="content">
+
+<h1>My Cute Papa Shravya ❤️</h1>
+
+<p id="typing"></p>
+
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+
+<p>
+Shravya… na life lo nuvvu vachina roju nundi everything change ayyindi.  
+Before you, life just simple ga nadustundi… but after you came, every moment special ayyindi.  
+Nee smile chusthe na mind lo unna stress motham disappear ayipothundi.  
+
+Nuvvu simple ga "hi" annappudu kuda na day complete ayipothundi Papa.  
+Sometimes nenu alochistha… ela oka person na life ni intha beautiful ga marchagaladu ani.  
+Answer okkate — adhi **Shravya**.
+
+Nuvvu matladithe na heart calm avuthundi.  
+Nuvvu navvithe na world bright avuthundi.  
+Nuvvu sad ga unte na heart kuda heavy aipothundi.
+</p>
+
+<img src="https://i.imgur.com/6Iej2c3.jpg">
+
+<p>
+
+Papa… life lo chala mandi vastharu, veltharu.  
+But kontha mandi matram mana life lo permanent ga mark leave chestharu.  
+For me that person is **you**.
+
+Nenu perfect person kaakapovachu.  
+Na daggara flaws kuda untayi.  
+But okka promise matram chestha —  
+ninnu happy ga chudataniki na best ivvadaniki always try chestha.
+
+Because for me…  
+love ante just word kaadu.  
+Love ante **Shravya**.
+
+Nee smile protect cheyadam,  
+nee dreams support cheyadam,  
+nee side lo life motham nilabadadam —  
+idhi na heart lo unna real wish.
+</p>
+
+<img src="https://i.imgur.com/6R0m4YB.jpg">
+
+<p>
+
+Papa… nenu future gurinchi alochinappudu  
+na mind lo automatically oka scene vastundi.  
+
+Nuvvu navvuthu na pakkana nadusthunna scene.  
+Mana madhya chinna chinna fights.  
+Malli patch up ayi navvukune moments.
+
+Simple ga cheppali ante —  
+**I want you in every chapter of my life story.**
+
+Because without you  
+life incomplete ga feel avuthundi.
+
+And today nenu oka small question adagali anukuntunna…
+</p>
+
+<h2>Will You Be Mine Forever Shravya? 💍</h2>
+
+<button class="yes" onclick="yes()">YES ❤️</button>
+<button class="no" onclick="no()">NO 💔</button>
+
+</div>
+
+<script>
+
+/* Start page */
+
+function start(){
+document.getElementById("start").style.display="none";
+document.getElementById("content").style.display="block";
+document.getElementById("music").play();
+startHearts();
+typeText();
+}
+
+/* Typing effect */
+
+var text="Shravya... this page is a small surprise from a developer who loves you very much ❤️";
+var i=0;
+
+function typeText(){
+if(i<text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeText,50);
+}
+}
+
+/* Heart rain */
+
+function startHearts(){
+
+setInterval(function(){
+
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},300)
+
+}
+
+/* Buttons */
+
+function yes(){
+alert("Yay ❤️ Love You Papa Shravya!");
+}
+
+function no(){
+alert("Think again Papa 😅❤️");
+}
+
+</script>
+
+</body>
+</html>
